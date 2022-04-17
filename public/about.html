@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+    {% block title -%}
+    {% if title%}
+        <title>Aproximator -{{title}}</title>
+    {% else %}
+        <title>Aproximator</title>
+    {% endif %}
+    {%endblock%}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header-container _container">
+          <div class="header-container__top">
+            <a href="/" class="header-container__name"> aproXimator </a>
+            <nav class="header-container__menu menu">
+                 {% block mainmenu -%}
+              <ul class="menu__list">
+               {% for m in menu -%}
+                <li class="menu__item">
+                  <a href="/{{m.url}}" class="menu_link">{{m.name}}</a>
+                </li>
+                {% endfor -%}
+              </ul>
+              {% endblock mainmenu -%}
+            </nav>
+            <div class="header-container__registr">
+              <form action="" class="registrationUser" name="registerForm">
+                <div class="inputBlock _registration">
+                  <label for="user">Пользователь</label>
+                  <input
+                    class="__inputFields"
+                    type="text"
+                    name="name"
+                    value=""
+                  />
+                  <label for="pass">Пароль</label>
+                  <input
+                    class="__inputFields"
+                    type="text"
+                    name="pass"
+                    value=""
+                  />
+                </div>
+                <div class="__buttonBlock">
+                  <button type="submit" class="registr" id="registration">
+                    Регистрация
+                  </button>
+                  <button type="submit" class="enter" id="entry">Вход</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="page">
+        <div class="page-container _container">
+            <h2>{{ title }}</h2>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-container _container">
+          <p>by HydroPes</p>
+          <p>2022</p>
+        </div>
+      </footer>
+    </div>
+    <script src="../static/js/main2.js"></script>
+  </body>
+</html> -->
+
+{% extends 'base.html' %}
+
+{% block content -%}
+{{ super() }}
+<div>
+<h2>О проекте:</h2>
+<p class ='textAbout'>Данный проект позволяет нарисовать произвольный контур и апроксимировать его математической кривой </p>
+</div>
+
+{% endblock -%}

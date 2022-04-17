@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content -%}
+{{ super() }}
+<div>
+<h2>Регистрация:</h2>
+<div class="header-container__registr">
+              {% for cat, msg in get_flashed_messages(True) %}
+              <div class="flash {{cat}}">
+                {{msg}}
+              </div>
+              {% endfor %}
+              <form  class="registrationUser" name="registerForm">
+                <div class="inputBlock _registration">
+                  <label for="user">Пользователь</label>
+                  <input
+                    class="__inputFields"
+                    type="text"
+                    name="userName"
+                    value="" required
+                  />
+                  <label for="pass">Пароль</label>
+                  <input
+                    class="__inputFields"
+                    type="text"
+                    name="password"
+                    value="" required
+                  />
+                </div>
+                <div class="__buttonBlock">
+                  <button formaction="/registration" formmethod="post" type="submit" class="registr" id="registration">
+                    Регистрация
+                  </button>
+                  <button formaction="/login" formmethod="post" type="submit" class="enter" id="entry">Вход</button>
+                </div>
+              </form>
+            </div>
+</div>
+
+{% endblock -%}
