@@ -85,10 +85,6 @@ input {
   flex-direction: column;
 }
 .header-container__top {
-  /* display: flex;
-    flex-direction: row;
-     */
-
   min-height: 50px;
   padding: 5px 0px;
   display: flex;

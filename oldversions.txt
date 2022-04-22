@@ -1,0 +1,24 @@
+    #def login():
+    # if 'userLogged' in session:
+    #     return redirect(url_for('profile', userName = session['userLogged']))
+    # elif request.method=='POST' and request.form['userName'] == 'iii' and request.form['password'] =='aaa':
+    #     session['userLogged'] = request.form['userName']
+    #     return redirect(url_for('profile', userName = session['userLogged']))
+
+    # @app.route("/profile/<userName>")
+# def profile(userName):
+#     print(session['userLogged'])
+#     if 'userLogged' not in session or session['userLogged'] != userName:
+#         abort(401)
+#     return render_template('index.html', menu=dbase.getMenu(), user= userName)
+    # if request.method =='POST':
+    #     print(request.form['userName'])
+    #     if len(request.form['userName']) >2:
+    #         flash('Регистрация завершена!', category='success')
+    #     else:
+    #         flash('Ошибка регистрации', category='error')
+
+    # return render_template('index.html', menu=menu)
+
+    def about():
+    # session.pop('userLogged', None)

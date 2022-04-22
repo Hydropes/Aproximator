@@ -3,8 +3,7 @@
 {% block content -%}
 {{ super() }}
 <div>
-<h2>Авторизация:</h2>
-<p></p>
+<h2>Регистрация:</h2>
 
               {% for cat, msg in get_flashed_messages(True) %}
               <div class="flash {{cat}}">
@@ -13,14 +12,21 @@
               {% endfor %}
               <form  class="registrationUser" name="registerForm">
                 <div class="inputBlock _registration">
-                  <label for="userEmail">Email</label>
+                  <label for="userName">Пользователь</label>
+                  <input
+                    class="__inputFields"
+                    type="text"
+                    name="userName"
+                    value="" required
+                  />
+                  <label for="userEmail">E-mail</label>
                   <input
                     class="__inputFields"
                     type="text"
                     name="userEmail"
                     value="" required
                   />
-                  <label for="pass">Пароль</label>
+                  <label for="password">Пароль</label>
                   <input
                     class="__inputFields"
                     type="text"
@@ -29,8 +35,9 @@
                   />
                 </div>
                 <div class="__buttonBlock">
-                  <button formaction="/login" formmethod="post" type="submit" class="enter" id="entry">Вход</button>
-                  <a href="/registration">Регистрация</a>
+                  <button formaction="/registration" formmethod="post" type="submit" class="registr" id="registration">
+                    Регистрация
+                  </button>
                 </div>
               </form>
             </div>

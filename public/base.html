@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/styles/styles.css" />
+<!--    <link rel="stylesheet" href="../static/styles/styles.css" />-->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/styles_ap.css')}}" />
     {% block title -%}
     {% if title%}
         <title>Aproximator -{{title}}</title>
@@ -18,49 +19,26 @@
       <header class="header">
         <div class="header-container _container">
           <div class="header-container__top">
-            <a href="/login" class="header-container__name"> aproXimator </a>
+            <a href="/" class="header-container__name"> aproXimator </a>
+             {% if current_user.get_id()%}
+            <div class="currentUser">
+              <h2>{{current_user.get_name()}}</h2>
+              <a href="{{url_for('logout')}}">Выйти</a>
+            </div>
+            {% endif %}
+
             <nav class="header-container__menu menu">
                  {% block mainmenu -%}
               <ul class="menu__list">
                {% for m in menu -%}
                 <li class="menu__item">
-                  <a href="/{{m.url}}" class="menu_link">{{m.name}}</a>
+                  <a href="/{{m.url}}" class="menu_link">{{m.title}}</a>
                 </li>
                 {% endfor -%}
               </ul>
               {% endblock mainmenu -%}
             </nav>
-            <!-- <div class="header-container__registr">
-              {% for cat, msg in get_flashed_messages(True) %}
-              <div class="flash {{cat}}">
-                {{msg}}
-              </div>
-              {% endfor %}
-              <form  class="registrationUser" name="registerForm">
-                <div class="inputBlock _registration">
-                  <label for="user">Пользователь</label>
-                  <input
-                    class="__inputFields"
-                    type="text"
-                    name="userName"
-                    value="" required
-                  />
-                  <label for="pass">Пароль</label>
-                  <input
-                    class="__inputFields"
-                    type="text"
-                    name="password"
-                    value="" required
-                  />
-                </div>
-                <div class="__buttonBlock">
-                  <button formaction="/registration" formmethod="post" type="submit" class="registr" id="registration">
-                    Регистрация
-                  </button>
-                  <button formaction="/login" formmethod="post" type="submit" class="enter" id="entry">Вход</button>
-                </div>
-              </form>
-            </div> -->
+            
           </div>
         </div>
       </header>
@@ -77,6 +55,6 @@
         </div>
       </footer>
     </div>
-    <script src="../static/js/main2.js"></script>
+    <script type="module" src="../static/js/main2.js"></script>
   </body>
 </html>
