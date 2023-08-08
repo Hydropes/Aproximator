@@ -123,11 +123,10 @@ input {
 }
 .menu_link {
 }
-.header-container__registr {
+
+.registrationUser {
   display: flex;
   flex-direction: column;
-}
-.registrationUser {
 }
 .draw-fields {
   border: 1px solid rebeccapurple;
